@@ -15,7 +15,7 @@ export default function App() {
   useBookSearch(query,pageNumber)
   return (
     <div>
-      <input type="text"></input>
+      <input type="text" onChange={handleSearch}></input>
       <div>Title</div>
       <div>Title</div>
       <div>Title</div>
