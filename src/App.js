@@ -12,16 +12,16 @@ export default function App() {
     setPageNumber(1)
   }
 
-  useBookSearch(query,pageNumber)
+  const { loading,error,books,hasMore} = useBookSearch(query,pageNumber)
   return (
     <div>
       <input type="text" onChange={handleSearch}></input>
-      <div>Title</div>
-      <div>Title</div>
-      <div>Title</div>
-      <div>Title</div>
-      <div>Loading</div>
-      <div>Error</div>
+     {books.map(book=>{
+       return <div key={book}>{book}</div>
+     })}
+     
+      <div>{loading && 'Loading...'}</div> 
+      <div>{Error && 'Error...'}</div>
     </div>
   );
 }

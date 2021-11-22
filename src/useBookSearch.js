@@ -37,5 +37,5 @@ export default function useBookSearch(query,pageNumber) {
 
     },[query,pageNumber])
 
-    return null
+    return{ loading,error,books,hasMore}
 }
