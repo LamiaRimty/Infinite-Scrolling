@@ -17,8 +17,10 @@ export default function App() {
      if(observer.current)observer.current.disconnect()
 
      observer.current=new IntersectionObserver( entries=>{
-       if(entries[0].isIntersecting){ //node that observing
-         console.log('Visible') //evryting is  watching to be in the entries array
+       if(entries[0].isIntersecting && hasMore){ //node that observing
+        setPageNumber(prevPageNumver=> prevPageNumver+1)
+        
+        //console.log('Visible') //evryting is  watching to be in the entries array
        }
      })
 
